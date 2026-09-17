@@ -252,3 +252,46 @@ if (whatsappButton && whatsappContainer) {
     );
 
 }
+/* ================= WHATSAPP FINAL ================= */
+
+const whatsappFinalButton =
+    document.getElementById("whatsappFinalButton");
+
+const whatsappFinalContainer =
+    document.querySelector(".whatsapp-final-container");
+
+
+if (whatsappFinalButton && whatsappFinalContainer) {
+
+    whatsappFinalButton.addEventListener(
+        "click",
+        () => {
+
+            whatsappFinalContainer.classList.toggle(
+                "active"
+            );
+
+        }
+    );
+
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            if (
+                !whatsappFinalContainer.contains(
+                    event.target
+                )
+            ) {
+
+                whatsappFinalContainer.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
