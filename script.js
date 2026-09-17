@@ -260,38 +260,22 @@ const whatsappFinalButton =
 const whatsappFinalContainer =
     document.querySelector(".whatsapp-final-container");
 
-
 if (whatsappFinalButton && whatsappFinalContainer) {
 
-    whatsappFinalButton.addEventListener(
-        "click",
-        () => {
+    whatsappFinalButton.addEventListener("click", () => {
 
-            whatsappFinalContainer.classList.toggle(
-                "active"
-            );
+        whatsappFinalContainer.classList.toggle("active");
 
-        }
-    );
+    });
 
+    document.addEventListener("click", (event) => {
 
-    document.addEventListener(
-        "click",
-        event => {
+        if (!whatsappFinalContainer.contains(event.target)) {
 
-            if (
-                !whatsappFinalContainer.contains(
-                    event.target
-                )
-            ) {
-
-                whatsappFinalContainer.classList.remove(
-                    "active"
-                );
-
-            }
+            whatsappFinalContainer.classList.remove("active");
 
         }
-    );
+
+    });
 
 }
