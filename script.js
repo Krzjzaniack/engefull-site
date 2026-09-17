@@ -207,6 +207,51 @@ document
     });
 
 
+/* ================= WHATSAPP ================= */
+
+const whatsappButton =
+    document.getElementById("whatsappButton");
+
+const whatsappContainer =
+    document.querySelector(
+        ".whatsapp-container"
+    );
+
+
+if (whatsappButton && whatsappContainer) {
+
+    whatsappButton.addEventListener(
+        "click",
+        () => {
+
+            whatsappContainer.classList.toggle(
+                "active"
+            );
+
+        }
+    );
+
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            if (
+                !whatsappContainer.contains(
+                    event.target
+                )
+            ) {
+
+                whatsappContainer.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
 /* ================= WHATSAPP FINAL ================= */
 
 const whatsappFinalButton = document.getElementById("whatsappFinalButton");
