@@ -207,68 +207,22 @@ document
     });
 
 
-/* ================= WHATSAPP ================= */
-
-const whatsappButton =
-    document.getElementById("whatsappButton");
-
-const whatsappContainer =
-    document.querySelector(
-        ".whatsapp-container"
-    );
-
-
-if (whatsappButton && whatsappContainer) {
-
-    whatsappButton.addEventListener(
-        "click",
-        () => {
-
-            whatsappContainer.classList.toggle(
-                "active"
-            );
-
-        }
-    );
-
-
-    document.addEventListener(
-        "click",
-        event => {
-
-            if (
-                !whatsappContainer.contains(
-                    event.target
-                )
-            ) {
-
-                whatsappContainer.classList.remove(
-                    "active"
-                );
-
-            }
-
-        }
-    );
-
-}
 /* ================= WHATSAPP FINAL ================= */
 
-const whatsappFinalButton =
-    document.getElementById("whatsappFinalButton");
-
-const whatsappFinalContainer =
-    document.querySelector(".whatsapp-final-container");
+const whatsappFinalButton = document.getElementById("whatsappFinalButton");
+const whatsappFinalContainer = document.querySelector(".whatsapp-final-container");
 
 if (whatsappFinalButton && whatsappFinalContainer) {
 
-    whatsappFinalButton.addEventListener("click", () => {
+    whatsappFinalButton.addEventListener("click", function (event) {
+
+        event.stopPropagation();
 
         whatsappFinalContainer.classList.toggle("active");
 
     });
 
-    document.addEventListener("click", (event) => {
+    document.addEventListener("click", function (event) {
 
         if (!whatsappFinalContainer.contains(event.target)) {
 
